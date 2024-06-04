@@ -20,6 +20,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "pagesHome.jsx";
 import About from "pagesAbout.jsx";
 
+import "server.js";
+
 function App() {
   return (
     <BrowserRouter>
