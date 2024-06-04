@@ -26,7 +26,9 @@ function App() {
   return (
     <BrowserRouter>
       <header>
-        <Link to="/">#VANLIFE</Link>
+        <Link className="site-logo" to="/">
+          #VANLIFE
+        </Link>
         <nav>
           <Link to="/about">About</Link>
         </nav>
@@ -34,6 +36,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/vans" element={<Vans />}></Route>
       </Routes>
     </BrowserRouter>
   );
