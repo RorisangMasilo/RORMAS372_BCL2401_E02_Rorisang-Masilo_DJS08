@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /**
  * Challenge:
  * Bootstrap the VanLife project by creating the first 2 routes:
