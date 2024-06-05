@@ -25,14 +25,6 @@ import "server.js";
 function App() {
   return (
     <BrowserRouter>
-      <header>
-        <Link className="site-logo" to="/">
-          #VANLIFE
-        </Link>
-        <nav>
-          <Link to="/about">About</Link>
-        </nav>
-      </header>
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
