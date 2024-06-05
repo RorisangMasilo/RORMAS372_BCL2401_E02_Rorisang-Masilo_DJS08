@@ -6,12 +6,12 @@ export default function Vans() {
   React.useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setVans(data));
   }, []);
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="van-title">
-      <Link to={"/vans/${van.id"}>
+      <Link to={"/vans/${van.id}"}>
         <img src={van.imageUrl}></img>
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -20,7 +20,7 @@ export default function Vans() {
             <span>/day</span>
           </p>
         </div>
-        <i className="{van-type ${van.type} selected">{van.type}</i>
+        <i className={`van-type ${van.type} selected`}>{van.type}</i>
       </Link>
     </div>
   ));
