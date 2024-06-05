@@ -1,11 +1,13 @@
 import React from "react";
+import bgImg from "../assets/images/about-hero.png";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <div className="about-page-container">
       <img src={bgImg} className="about-hero-image"></img>
       <div className="about-page-content">
-        <h1>Don't squeeze in a sedan when you relax in a van.</h1>
+        <h1>Dont squeeze in a sedan when you relax in a van.</h1>
         <p>
           Our mission is to enliven your road trip with the perfect travel van
           rental. Our vans are recertified before each trip to ensure your
