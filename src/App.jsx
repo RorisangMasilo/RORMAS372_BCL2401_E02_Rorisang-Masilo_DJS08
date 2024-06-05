@@ -21,6 +21,9 @@ import Home from "../pagesHome.jsx";
 import About from "../pagesAbout.jsx";
 import Vans from "../pages/Vans.jsx";
 import VanDetail from "../pages/VanDetail";
+import Dashboard from "../pages/Host/Dashboard.jsx";
+import Income from "../pages/Host/Income.jsx";
+import Reviews from "../pages/Host/Reviews.jsx";
 import Layout from "../components/Layout.jsx";
 
 import "server.js";
@@ -34,6 +37,9 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/vans" element={<Vans />}></Route>
           <Route path="/van/:id" element={<VanDetail />}></Route>
+          <Route path="/host" element={<Dashboard />}></Route>
+          <Route path="/host/income" element={<Income />}></Route>
+          <Route path="/host/reviews" element={<Reviews />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
