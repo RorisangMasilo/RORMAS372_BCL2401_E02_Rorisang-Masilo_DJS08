@@ -17,8 +17,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "pagesHome.jsx";
-import About from "pagesAbout.jsx";
+import Home from "../pagesHome.jsx";
+import About from "../pagesAbout.jsx";
+import Vans from "../pages/Vans.jsx";
+import VanDetail from "../pages/VanDetail";
+import Layout from "../components/Layout.jsx";
 
 import "server.js";
 
@@ -26,10 +29,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/vans" element={<Vans />}></Route>
-        <Route path="/van/:id" element={<VanDetail />}></Route>
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/about" element={<About />}></Route>
+          <Route path="/vans" element={<Vans />}></Route>
+          <Route path="/van/:id" element={<VanDetail />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
