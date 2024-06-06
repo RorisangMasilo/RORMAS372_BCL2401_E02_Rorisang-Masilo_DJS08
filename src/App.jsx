@@ -10,6 +10,8 @@ import VanDetail from "../pages/Vans/VanDetail.jsx";
 import Dashboard from "../pages/Host/Dashboard.jsx";
 import Income from "../pages/Host/Income.jsx";
 import Reviews from "../pages/Host/Reviews.jsx";
+import HostVans from "../pages/Host/HostVans.jsx";
+import HostVanDetail from "../pages/Host/HostVanDetail.jsx";
 import Layout from "../components/Layout.jsx";
 import HostLayout from "../components/HostLayout.jsx";
 
@@ -25,10 +27,12 @@ function App() {
           <Route path="/vans" element={<Vans />}></Route>
           <Route path="/van/:id" element={<VanDetail />}></Route>
 
-          <Route path="/" element={<HostLayout />}></Route>
+          <Route path="host" element={<HostLayout />}></Route>
           <Route index element={<Dashboard />}></Route>
-          <Route path="/host/income" element={<Income />}></Route>
-          <Route path="/host/reviews" element={<Reviews />}></Route>
+          <Route path="income" element={<Income />}></Route>
+          <Route path="reviews" element={<Reviews />}></Route>
+          <Route path="vans" element={<HostVans />}></Route>
+          <Route path="vans/:id" element={<HostVanDetail />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
