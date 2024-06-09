@@ -12,6 +12,9 @@ import Income from "../pages/Host/Income.jsx";
 import Reviews from "../pages/Host/Reviews.jsx";
 import HostVans from "../pages/Host/HostVans.jsx";
 import HostVanDetail from "../pages/Host/HostVanDetail.jsx";
+import HostVanInfo from "./pages/Host/HostVanInfo";
+import HostVanPricing from "./pages/Host/HostVanPricing";
+import HostVanPhotos from "./pages/Host/HostVanPhotos";
 import Layout from "../components/Layout.jsx";
 import HostLayout from "../components/HostLayout.jsx";
 

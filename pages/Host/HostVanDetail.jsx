@@ -5,6 +5,12 @@ export default function HostVanDetail() {
   const { id } = useParams();
   const [currentVan, setCurrentVan] = React.useState(null);
 
+  const activeStyles = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
+
   React.useEffect(() => {
     fetch(`/api/host/vans/${id}`)
       .then((res) => res.json())
