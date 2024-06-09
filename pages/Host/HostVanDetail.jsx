@@ -11,12 +11,28 @@ export default function HostVanDetail() {
       .then((data) => setCurrentVan(data.vans));
   }, []);
 
+  if (!currentVan) {
+    return <h1>Loading...</h1>;
+  }
+
   return (
-    <div>
-      <img src={currentVan.imageUrl} width={150}></img>
-      <h2>{currentVan.name}</h2>
-      <p>{currentVan.price}</p>
-      <p>{currentVan.type}</p>
-    </div>
+    <section>
+      <Link to=".." relative="path" className="back-button">
+        &larr; <span>Back to all vans</span>
+      </Link>
+      <div className="host-van-detail-layout-container">
+        <div className="host-van-detail">
+          <img src={currentVan.imageUrl}></img>
+          <div className="host-van-detail-info-text">
+            <i className={`van-type van-type-${currentVan.type}`}>
+              {currentVan.type}
+            </i>
+            <h3>{currentVan.name}</h3>
+            <h4>${currentVan.price}/day</h4>
+          </div>
+        </div>
+        <Outlet></Outlet>
+      </div>
+    </section>
   );
 }
