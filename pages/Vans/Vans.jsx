@@ -1,13 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = React.useState([]);
+
+  const typeFilter = searchParams.get("type");
+  console.log(typeFilter);
+
   React.useEffect(() => {
     fetch("/api/vans")
       .then((res) => res.json())
       .then((data) => setVans(data));
   }, []);
+
+  const displayedVans = typeFilter
+    ? vans.filter((van) => van.type === typeFilter)
+    : vans;
 
   const vanElements = vans.map((van) => (
     <div key={van.id} className="van-title">
