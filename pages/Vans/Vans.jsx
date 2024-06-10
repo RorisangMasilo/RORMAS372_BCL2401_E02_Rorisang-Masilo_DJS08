@@ -18,8 +18,8 @@ export default function Vans() {
     : vans;
 
   const vanElements = displayedVans.map((van) => (
-    <div key={van.id} className="van-title">
-      <Link to={"/vans/${van.id}"}>
+    <div key={van.id} className="van-tile">
+      <Link to={"/vans/${van.id}"} state={{ search: searchParams.toString() }}>
         <img src={van.imageUrl}></img>
         <div className="van-info">
           <h3>{van.name}</h3>
