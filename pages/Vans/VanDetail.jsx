@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 
 export default function VanDetail() {
   const params = useParams();
+  const location = useLocation();
   const [van, setVans] = React.useState(null);
 
   React.useEffect(() => {
@@ -11,6 +12,7 @@ export default function VanDetail() {
       .then((data) => setVans(data.vans));
   }, [params.id]);
 
+  const search = location.state?.search || "";
   return (
     <div className="van-detail-container">
       {van ? (
