@@ -12,9 +12,14 @@ export default function Vans() {
   React.useEffect(() => 
     async function loadVans() {
       setLoading(true)
-      const data = await getVans()
-      setVans(data)
-      setLoading(false)
+      try {
+        const data = await getVans()
+        setVans(data)
+      catch (err) {
+        setError(err)
+      } finally {
+         setLoading(false)
+      }
     }
     loadVans()
   }, []);
@@ -25,7 +30,12 @@ export default function Vans() {
 
   const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
-      <Link to={"/vans/${van.id}"} state={{ search: searchParams.toString() }}>
+      <Link 
+      to={van.id} 
+      state={{ 
+        `search: searchParams.toString()}`
+        type: typeFilter
+      }}>
         <img src={van.imageUrl}></img>
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -48,6 +58,13 @@ export default function Vans() {
       }
       return prevParams;
     });
+  }
+
+  if (loading) {
+    return <h1>Loading...</h1>
+  }
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>
   }
 
   return (
