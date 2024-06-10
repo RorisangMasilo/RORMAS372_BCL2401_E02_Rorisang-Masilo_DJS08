@@ -2,10 +2,12 @@ import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function AuthRequired() {
-  const authenicated = false;
+  const authenticated = false;
 
-  if (!authenicated) {
-    return <Navigate to="/login" />;
+  if (!authenticated) {
+    return (
+      <Navigate to="/login" state={{ message: "you must log in first" }} />
+    );
   }
   return <Outlet />;
 }

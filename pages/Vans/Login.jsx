@@ -7,7 +7,7 @@ export default function Login() {
   });
 }
 
-function handleSumbit(e) {
+function handleSubmit(e) {
   e.preventDefault();
   console.log(loginFormData);
 }
