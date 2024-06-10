@@ -15,7 +15,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/modest-explorer.png",
       type: "simple",
-    });
+      hostId: "123" });
     server.create("van", {
       id: "2",
       name: "Beach Bum",
@@ -25,7 +25,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/beach-bum.png",
       type: "rugged",
-    });
+      hostId: "123" });
     server.create("van", {
       id: "3",
       name: "Reliable Red",
@@ -35,7 +35,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/reliable-red.png",
       type: "luxury",
-    });
+      hostId: "123" });
     server.create("van", {
       id: "4",
       name: "Dreamfinder",
@@ -45,7 +45,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/dreamfinder.png",
       type: "simple",
-    });
+      hostId: "123" });
     server.create("van", {
       id: "5",
       name: "The Cruiser",
@@ -55,7 +55,7 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png",
       type: "luxury",
-    });
+      hostId: "123" });
     server.create("van", {
       id: "6",
       name: "Green Wonder",
@@ -65,17 +65,20 @@ createServer({
       imageUrl:
         "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png",
       type: "rugged",
-    });
+      hostId: "123" });
   },
+
+  server.create("user", { id: "123", email: "b@b.com", password: "p123", name: "Bob"})
+},
 
   routes() {
     this.namespace = "api";
     this.logging = false;
-    this.timing = 2000
+    // this.timing = 2000
 
     this.get("/vans", (schema, request) => {
-      return new Response(400, {}, {error: "Error fetching data"})
-     // return schema.vans.all();
+      // return new Response(400, {}, {error: "Error fetching data"})
+     return schema.vans.all();
     });
 
     this.get("/vans/:id", (schema, request) => {
@@ -90,6 +93,19 @@ createServer({
     this.get("/host/vans/id:", schema, request) => {
       const id = request.params.id
       return schema.vans.findBy({ id, hostId: "123" })
-    }
-  },
-});
+    });
+
+    this.post("/login", (schema, request) => {
+      const {email, password } = JSON.parse(request.requestBody)
+      const foundUser = schema.users.findBy({ email, password })
+      if (!foundUser) {
+        return new Response(401, {}, { message: "No user with those credentials found!"})
+      }
+
+      foundUser.password = undefinedreturn {
+        user: foundUser,
+        token: "enjoy your pizza, here's your tokens."
+      }
+    })
+  }
+})
