@@ -15,6 +15,7 @@ import HostVanDetail from "../pages/Host/HostVanDetail.jsx";
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import HostVanPricing from "./pages/Host/HostVanPricing";
 import HostVanPhotos from "./pages/Host/HostVanPhotos";
+import NotFound from "./pages/NotFound.jsx";
 import Layout from "../components/Layout.jsx";
 import HostLayout from "../components/HostLayout.jsx";
 
@@ -25,20 +26,24 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/vans" element={<Vans />}></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
           <Route path="/van/:id" element={<VanDetail />} />
 
           <Route path="host" element={<HostLayout />} />
           <Route index element={<Dashboard />} />
-          <Route path="income" element={<Income />}></Route>
-          <Route path="reviews" element={<Reviews />}></Route>
-          <Route path="vans" element={<HostVans />}></Route>
-          <Route path="vans/:id" element={<HostVanDetail />}></Route>
-          <Route index element={<HostVanInfo />} />
-          <Route path="pricing" element={<HostVanPricing />} />
-          <Route path="photos" element={<HostVanPhotos />} R />
+          <Route path="income" element={<Income />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="vans" element={<HostVans />} />
+          <Route path="vans/:id" element={<HostVanDetail />}>
+            <Route path="host" element={<HostLayout />}>
+              <Route index element={<HostVanInfo />} />
+              <Route path="pricing" element={<HostVanPricing />} />
+              <Route path="photos" element={<HostVanPhotos />} />
+            </Route>
+          </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
