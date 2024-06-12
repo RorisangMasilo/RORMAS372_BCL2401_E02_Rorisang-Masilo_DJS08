@@ -1,7 +1,8 @@
 export async function getVans() {
   const res = await fetch("/api/vans");
   if (!res.oimport { initializeApp } from "firebase/app"
-import {
+
+/*    import {
     getFirestore,
     collection,
     doc,
@@ -20,7 +21,7 @@ const firebaseConfig = {
     messagingSenderId: "803007000356",
     appId: "1:803007000356:web:446cd3a1ca406839258db1"
 };
-
+*/
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
 
