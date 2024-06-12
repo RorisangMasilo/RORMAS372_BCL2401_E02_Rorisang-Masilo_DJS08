@@ -16,7 +16,7 @@ export default function Vans() {
       try {
         const data = await getVans()
         setVans(data)
-      catch (err) {
+      } catch (err) {
         setError(err)
       } finally {
          setLoading(false)
@@ -34,9 +34,10 @@ export default function Vans() {
       <Link 
       to={van.id} 
       state={{ 
-        `search: searchParams.toString()}`
+        `search: searchParams.toString()}`,
         type: typeFilter
-      }}>
+      }}
+      >
         <img src={van.imageUrl}></img>
         <div className="van-info">
           <h3>{van.name}</h3>
@@ -62,10 +63,10 @@ export default function Vans() {
   }
 
   if (loading) {
-    return <h1 aria-live="polite">Loading...</h1>
+    return <h1>Loading...</h1>
   }
   if (error) {
-    return <h1 aria-live="assertive">There was an error: {error.message}</h1>
+    return <h1>There was an error: {error.message}</h1>
   }
 
   return (
@@ -74,11 +75,11 @@ export default function Vans() {
       <div className="van-list-filter-buttons">
         <button
           onClick={() => handleFilterChange("type", "simple")}
-          className={`van-type simple ${
-            typeFilter === "simple" ? "selected" : ""
-          }`}
-        >
-          Simple
+          className={
+            `van-type simple 
+          ${typeFilter === "simple" ? "selected" : ""}`
+          }
+        >Simple
         </button>
         <button
           onClick={() => handleFilterChange("type", "luxury")}
