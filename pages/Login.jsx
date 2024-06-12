@@ -11,6 +11,8 @@ export default function Login() {
   const location = useLocation()
   const navigate = useNavigate()
 
+  const from = location.state?.from || "/host";
+  
 function handleSubmit(e) {
   e.preventDefault();
   setStatus("submitting");
