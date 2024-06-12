@@ -8,7 +8,8 @@ export default function Login() {
   });
   const [status, setStatus] = React.useState("idle")
   const [error, setError]
-}
+  const location = useLocation()
+  const navigate = useNavigate()
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -63,3 +64,4 @@ return (
     </form>
   </div>
 );
+)
