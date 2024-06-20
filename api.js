@@ -1,8 +1,5 @@
-export async function getVans() {
-  const res = await fetch("/api/vans");
-  if (!res.oimport { initializeApp } from "firebase/app"
-
-/*    import {
+import { initializeApp } from "firebase/app";
+import {
     getFirestore,
     collection,
     doc,
@@ -11,19 +8,10 @@ export async function getVans() {
     query,
     where,
     documentId
-} from "firebase/firestore/lite"
+} from "firebase/firestore/lite";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD_k3v3HK3tKEqhlqFHPkwogW7PqEqhGhk",
-    authDomain: "vanlife-a1af5.firebaseapp.com",
-    projectId: "vanlife-a1af5",
-    storageBucket: "vanlife-a1af5.appspot.com",
-    messagingSenderId: "803007000356",
-    appId: "1:803007000356:web:446cd3a1ca406839258db1"
-};
-*/
-const app = initializeApp(firebaseConfig)
-const db = getFirestore(app)
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 // Refactoring the fetching functions below
 const vansCollectionRef = collection(db, "vans")
@@ -85,7 +73,7 @@ export async function loginUser(creds) {
     }
 
     return data
-}k) {
+}) {
     throw {
       message: "Failed to fetch vans",
       statusText: res.statusText,
