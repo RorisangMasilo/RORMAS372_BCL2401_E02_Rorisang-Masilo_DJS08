@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Outlet, Navigate, useLocation } from "react-router-dom";
 
 export default function AuthRequired() {
   const isLoggedIn = localStorage.getItem("loggedin");
