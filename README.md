@@ -2,6 +2,18 @@
 
 🎥 INSERT LOOM PRESENTATION LINK: [[Here](https://www.loom.com/share/82e65bf646d345c480d6adc2f894ae38?sid=ab579528-7fc6-443b-b752-1bea7ba68d19)]
 
+# Personal Reflections
+
+**Achievements:** I manage to create multiple files with multiple dependencies.
+
+**Challenges:** The React course in its entirety has shown me how I may need to focus & probably relearn everything from scratch, especially constantly debugging and refactoring of code.
+
+**Netlify link:**
+
+**Instructions:**
+
+1. npm run dev
+
 After cloning the repo, run `npm install` to install the dependencies
 
 Are you ready to get stuck into some React Router? For this challenge, you are required to code along with the lecturer from this lesson: [VanLife Project Bootstrapping](https://scrimba.com/learn/react/vanlife-project-bootstrapping-co8bc40b191eec875ecf00b23).
